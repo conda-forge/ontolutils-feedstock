@@ -1,5 +1,5 @@
 {% set name = "ontolutils" %}
-{% set version = "0.18.0" %}
+{% set version = "0.18.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/ontolutils-{{ version }}.tar.gz
-  sha256: 8a575d8abaaf06f64b99930dbaf92b4fba507bb9230cd49bd309656370ca04ce
+  sha256: 3b4ce4125f95665daf9e3f0053f2c4ce7433aad3a5ad1a18d12d3a96d4caf40b
 
 build:
   noarch: python
