@@ -1,0 +1,54 @@
+schema_version: 1
+
+context:
+  name: ontolutils
+  version: 0.18.1
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/ontolutils-${{ version }}.tar.gz
+  sha256: 3b4ce4125f95665daf9e3f0053f2c4ce7433aad3a5ad1a18d12d3a96d4caf40b
+
+build:
+  number: 1
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - setuptools >=78.1.1
+    - wheel
+    - pip
+  run:
+    - python >=${{ python_min }}
+    - rdflib >=7.0.0
+    - pydantic >=2.8.2
+    - python-dateutil >=2.9.0
+    - requests >=2.32.3
+    - appdirs >=1.4.4
+
+tests:
+  - python:
+      imports:
+        - ontolutils
+      python_version: ${{ python_min }}.*
+  - requirements:
+      run:
+        - pip
+        - python ${{ python_min }}.*
+    script:
+      - pip check
+
+about:
+  summary: Utility library for the work with ontologies.
+  license: MIT
+  license_file: LICENSE
+  homepage: https://github.com/matthiasprobst/ontology-utils
+
+extra:
+  recipe-maintainers:
+    - jan-janssen
