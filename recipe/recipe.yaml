@@ -23,6 +23,7 @@ requirements:
     - setuptools >=78.1.1
     - wheel
     - pip
+    - numpy
   run:
     - python >=${{ python_min }}
     - rdflib >=7.0.0
