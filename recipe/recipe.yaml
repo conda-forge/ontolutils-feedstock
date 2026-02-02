@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: ontolutils
-  version: 0.27.5
+  version: 0.27.6
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/ontolutils-${{ version }}.tar.gz
-  sha256: 835013dda9ce25403bd59465fe0eabd4e2844c78e8ea3d80b96588b64c7600b4
+  sha256: 8de5c600058d083e111dfa3c162cc3de762e1bcfa3901150db251f9da79b9172
 
 build:
   number: 0
